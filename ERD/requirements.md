@@ -59,3 +59,4 @@ Message
 * recipient id: Foreign key(User)
 * message body: TEXT, NOT NULL
 * sent_at: TIMESTAMP, DEFALT CURRENT_TIMESTAMP
+![alt text](image.png)
