@@ -20,7 +20,7 @@ User
 
 Propety
 * property id (PRIMARY KEY, UNIQUE)
-* host id (FORIGN KEY, USER)
+* host id (FOREIGN KEY, USER)
 * name (VARcHAR, NOT NULL)
 * description (TEXT, NOT NULL)
 * location (VARCHAR, NOT NULL)
@@ -30,8 +30,8 @@ Propety
 
 Booking 
 * booking id  (Primary key, UNIQUE)
-* property id (forign key(Property))
-* user id (forign(User))
+* property id (foreign key(Property))
+* user id (foreign(User))
 * start date: DATE, NOT NULL
 * end date: DATE, NOT NULL
 * total price: DECIMAL, NOT NULL
@@ -40,22 +40,22 @@ Booking
 
 Payment
 * payment id: (primary key, UNIQUE)
-* booking id: (Forign key(Booking))
+* booking id: (Foreign key(Booking))
 * amount: DECIMAL, NOT NULL
 * payment method: ENUM("credit card", "paypal", "stripe"), NOT NULL
 * payment date: TIMESTAMP, DEFALT CURRENT_TIMESTAMP
 
 Review 
 * review id: primary key, UNIQUE
-* property id: Forign key(Property)
-* user id: Forign key(User)
+* property id: Foreign key(Property)
+* user id: Foreign key(User)
 * rating: INTEGER, CHECK: "rating >= 1 AND rating <= 5, NOT NULL
 * comment: TEXT, NOT NULL
 * created_at: TIMESTAMP, DEFALT CURRENT_TIMESTAMP
 
 Message
 * message id: Primary key, UNIQUE
-* sender id: Forign key(User)
-* recipient id: Forign key(User)
+* sender id: Foreign key(User)
+* recipient id: Foreign key(User)
 * message body: TEXT, NOT NULL
 * sent_at: TIMESTAMP, DEFALT CURRENT_TIMESTAMP
