@@ -9,7 +9,7 @@
 
 # Attributes
 User 
-> user id (PRIMARY KEY, UNIQUE)
+<user id (PRIMARY KEY, UNIQUE)
 > first_name (VARCHAR, NOT NULL)
 > last_name (VARCHAR, NOT NULL)
 > email (VARCHAR, UNQUE, NOT NULL)
