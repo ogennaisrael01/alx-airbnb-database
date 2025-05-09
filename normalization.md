@@ -1,0 +1,1 @@
+# Normalize your database design
