@@ -59,4 +59,6 @@ Message
 * recipient id: Foreign key(User)
 * message body: TEXT, NOT NULL
 * sent_at: TIMESTAMP, DEFALT CURRENT_TIMESTAMP
+
+## Entity Relationship (ER) Diagram
 ![alt text](image.png)
