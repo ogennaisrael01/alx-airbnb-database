@@ -1,5 +1,5 @@
 CREATE TABLE User(
-    id INT  PRIMARY KEY,
+    user_id INT  PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL, 
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR UNIQUE, 
@@ -11,7 +11,7 @@ CREATE TABLE User(
 );
 
 CREATE TABLE Property(
-    id INT PRIMARY KEY ,
+    property_id INT PRIMARY KEY ,
     host_id FOREIGN KEY(host_id) REFERENCES User(id),
     property_name VARCHAR(100) NOT NULL,
     property_description TEXT NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE Property(
 );
 
 CREATE TABLE Booking(
-    id INT PRIMARY KEY ,
+    booking_id INT PRIMARY KEY ,
     property_id FOREIGN KEY(property_id) REFERENCES Property(id),
     user_id FOREIGN KEY(user_id) REFERENCES User(id),
     start_date  DATE NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE Booking(
 );
 
 CREATE TABLE Payment(
-    id INT PRIMARY KEY ,
+    payment_id INT PRIMARY KEY ,
     booking_id FOREIGN KEY(booking_id) REFERENCES Booking(id),
     amount DECIMAL NOT NULL,
     payment_method ENUM("credit card", "paypal", "stipe"),
@@ -41,7 +41,7 @@ CREATE TABLE Payment(
 );
 
 CREATE TABLE Review(
-    id INT PRIMARY KEY ,
+    review_id INT PRIMARY KEY ,
     property_id INT FOREIGN KEY(property_id) REFERENCES Property(id),
     User_id FOREIGN KEY(User_id) REFERENCES User(id),
     rating INT CHECK (rating >= 1 AND rating <= 5) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE Review(
 );
 
 CREATE TABLE Message(
-    id INT PRIMARY KEY ,
+    message_id INT PRIMARY KEY ,
     sender_id INT, FOREIGN KEY(sender_id) REFERENCES User(id),
     recipient_id INT FOREIGN KEY(recipient_id) REFERENCES User(id),
     message_body TEXT NOT NULL,
