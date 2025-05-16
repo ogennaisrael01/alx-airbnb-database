@@ -2,8 +2,8 @@
 
 SELECT Booking.booking_id, Booking.total_price, Booking.status, 
         User.first_name, User.last_name,
-        Property.property_name, Property.price pernight,
-        Payment,amount, Payment.payment_method
+        Property.property_name, Property.price_pernight,
+        Payment.amount, Payment.payment_method
 FROM Booking
 INNER JOIN User ON Booking.user_id = User.user_id
 INNER JOIN Property ON Booking.property_id = Property.property_id
