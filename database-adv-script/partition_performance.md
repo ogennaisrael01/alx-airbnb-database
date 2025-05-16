@@ -1,0 +1,1 @@
+// Partitioning helps improve query performance by allowing the database to scan only relevant partitions based on start_date.
