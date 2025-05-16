@@ -1,7 +1,29 @@
--- Partition the Booking table by RANGE on the start_date column
+-- Partition the Booking table by RANGE on the start_date column;
 
-CREATE TABLE booking_2023 PARTITION OF Booking
-FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
+PARTITION BY  RANGE (YEAR(start_date))(
+    PARTITION p2023 VALUES LESS THAN (2024)
+    PARTITION P2024 VALUES LESS THAN (2025)
 
-CREATE TABLE booking_2024 PARTITION OF Booking
-FOR VALUES FROM ('2024-01-01') TO ('2025-01-01);
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PARTITION BY RANGE (YEAR(start_date)) (
+    PARTITION p2023 VALUES LESS THAN (2024),
+    PARTITION p2024 VALUES LESS THAN (2025)
