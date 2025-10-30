@@ -1,14 +1,13 @@
-
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     phone_number VARCHAR(15),
-    role VARCHAR(20) CHECK (role IN ('admin', 'user', "guest")) NOT NULL,
+    role VARCHAR(20) CHECK (role IN ('admin', 'user', 'guest')) NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-); 
+);
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
@@ -42,6 +41,7 @@ CREATE TABLE payments (
     payment_method VARCHAR(50) NOT NULL,
     status VARCHAR(20) CHECK (status IN ('completed', 'failed', 'pending')) DEFAULT 'pending'
 );
+
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id) ON DELETE CASCADE,
@@ -59,4 +59,3 @@ CREATE TABLE messages (
     sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     read_status BOOLEAN DEFAULT FALSE
 );
-
