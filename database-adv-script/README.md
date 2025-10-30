@@ -1,4 +1,4 @@
-- Retrieve expected master  table  by joining tables using SQL joins
+- Retrieve joint master table using  using SQL joins
 
 * Excecute script
 ```
