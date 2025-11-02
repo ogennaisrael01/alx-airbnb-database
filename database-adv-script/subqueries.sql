@@ -1,9 +1,20 @@
--- Write a query to find all properties where the average rating is greater than 4.0 using a subquery.
+-- -- Write a query to find all properties where the average rating is greater than 4.0 using a subquery.
 
-SELECT product_id,
-    rating, message
-FROM(
-    SELECT * 
-    FROM reviews
-    WHERE rating > 4.0
-)
+-- SELECT product_id,
+--     rating, message
+-- FROM(
+--     SELECT * 
+--     FROM reviews
+--     WHERE rating > 4.0
+-- )
+
+-- -- Write a correlated subquery to find users who have made more than 3 bookings
+SELECT users.id, CONCAT(users.first_name, ' ', users.last_name) as full_name,
+    users.email, (SELECT
+                    COUNT(bookings.user_id) FROM bookings
+                    WHERE bookings.user_id = users.id
+                    GROUP BY bookings.user_id
+                    
+                ) AS total_bookings
+FROM users
+
