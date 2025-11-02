@@ -9,7 +9,7 @@ ON users(role, email)
 -- -- create index on booking table
 
 CREATE INDEX idx_on_bookings
-ON bookings(user_id, product_id, total_price)
+ON bookings(user_id, product_id, total_price, status)
 
 -- -- create index on product table
 

@@ -7,9 +7,10 @@ SELECT CONCAT(users.first_name, ' ', users.last_name) AS full_name,
 FROM users
 INNER JOIN products
 ON products.user_id = users.id 
-
 INNER JOIN bookings
 ON bookings.user_id = users.id
 
 INNER JOIN payments
 ON payments.booking_id = bookings.id
+WHERE users.role = 'admin'
+    AND bookings.status = 'confirmed'
